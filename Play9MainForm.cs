@@ -87,7 +87,7 @@ namespace Play9GamePackBasic
 
         private void setupGameButtons()
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 8; i++)
             {
                 GameButton gb;
                 foreach (var item in gameButtons)
@@ -97,7 +97,7 @@ namespace Play9GamePackBasic
                     gb.DescText = item.DescText;
                     gb.BorderImage = item.BordeColor;
                     gb.ButtonImage = item.ImageSource;
-                    gb.Margin = new Padding(40, 40, 0, 0);
+                    gb.Margin = new Padding(45, 30, 0, 0);
 
                     buttonPanel.Controls.Add(gb);
                 }

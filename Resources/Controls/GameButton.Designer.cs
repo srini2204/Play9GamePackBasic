@@ -30,9 +30,8 @@
         {
             this.lblDesc = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.pbButton = new System.Windows.Forms.PictureBox();
             this.pbBorder = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbButton)).BeginInit();
+            this.pbButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbBorder)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,19 +57,6 @@
             this.lblHeader.Size = new System.Drawing.Size(0, 45);
             this.lblHeader.TabIndex = 6;
             // 
-            // pbButton
-            // 
-            this.pbButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbButton.BackColor = System.Drawing.Color.Transparent;
-            this.pbButton.Location = new System.Drawing.Point(5, 5);
-            this.pbButton.Margin = new System.Windows.Forms.Padding(0);
-            this.pbButton.Name = "pbButton";
-            this.pbButton.Size = new System.Drawing.Size(399, 232);
-            this.pbButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbButton.TabIndex = 5;
-            this.pbButton.TabStop = false;
-            // 
             // pbBorder
             // 
             this.pbBorder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -84,19 +70,32 @@
             this.pbBorder.TabIndex = 4;
             this.pbBorder.TabStop = false;
             // 
+            // pbButton
+            // 
+            this.pbButton.BackColor = System.Drawing.Color.Transparent;
+            this.pbButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pbButton.FlatAppearance.BorderSize = 0;
+            this.pbButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pbButton.Location = new System.Drawing.Point(5, 5);
+            this.pbButton.Margin = new System.Windows.Forms.Padding(0);
+            this.pbButton.Name = "pbButton";
+            this.pbButton.Size = new System.Drawing.Size(399, 232);
+            this.pbButton.TabIndex = 8;
+            this.pbButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.pbButton.UseVisualStyleBackColor = false;
+            // 
             // GameButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.pbButton);
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.lblHeader);
-            this.Controls.Add(this.pbButton);
             this.Controls.Add(this.pbBorder);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "GameButton";
             this.Size = new System.Drawing.Size(409, 310);
-            ((System.ComponentModel.ISupportInitialize)(this.pbButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBorder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -107,8 +106,8 @@
 
         private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.PictureBox pbButton;
         private System.Windows.Forms.PictureBox pbBorder;
+        private System.Windows.Forms.Button pbButton;
 
     }
 }
