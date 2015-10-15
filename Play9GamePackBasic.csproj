@@ -64,7 +64,15 @@
     <Compile Include="Resources\Controls\CustomGameButton.xaml.cs">
       <DependentUpon>CustomGameButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Controls\GameButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\Controls\GameButton.Designer.cs">
+      <DependentUpon>GameButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Controls\GameModel.cs" />
+    <Compile Include="Resources\Controls\GameModelMaster.cs" />
+    <Compile Include="Resources\Controls\GlobalMouseHandler.cs" />
     <Compile Include="Resources\RunApp.cs" />
     <Compile Include="Resources\Splasher\Splasher.cs" />
     <Compile Include="Resources\Splasher\SplashForm.cs">
@@ -82,6 +90,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Resources\Controls\GameButton.resx">
+      <DependentUpon>GameButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Splasher\SplashForm.resx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

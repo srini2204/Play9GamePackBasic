@@ -1,6 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Games>
-  <Game>
+
+<AppData>
+  <HeaderText FontFamily="Arial Bold" FontColor="Black" FontSize="30" />
+  <DescText FontFamily="Arial" FontColor="Black" FontSize="18" />
+  
+  <Games>
+
+    <Game>
+      <Header>The Cubby House</Header>
+      <Desc>Pegasus</Desc>
+      <ButtonImagePath>D:\workspace\Play9GamePackBasic\Play9GamePackBasic\Resources\Images\GameIcons\09 CubbyHouse.png</ButtonImagePath>
+      <BorderPath>D:\workspace\Play9GamePackBasic\Play9GamePackBasic\Resources\Images\IconBackgrounds\Box Pink.png</BorderPath>
+      <GamePath>D:\workspace\of_v0.8.4_vs_release\apps\PegasusHighwaysHotelKidsZone\bin\PegasusHighwaysHotelLauncher\PegasusHighwaysHotelLauncher.exe</GamePath>
+    </Game>
     
-  </Game>
-</Games>
+  </Games>
+</AppData>
