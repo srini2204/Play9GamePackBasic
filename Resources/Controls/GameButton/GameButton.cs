@@ -12,6 +12,7 @@ namespace Play9GamePackBasic.Resources.Controls
 {
     public partial class GameButton : UserControl
     {
+        public event EventHandler ButtonClicked;
 
         [Category("Custom")]
         [Description("The game name displayed in bold")]
@@ -118,6 +119,12 @@ namespace Play9GamePackBasic.Resources.Controls
         {
             _gameData = new GameModel();
             InitializeComponent();
+        }
+
+        private void pbButton_Click(object sender, EventArgs e)
+        {
+            if (this.ButtonClicked != null)
+                this.ButtonClicked(null, null);
         }
     }
 }

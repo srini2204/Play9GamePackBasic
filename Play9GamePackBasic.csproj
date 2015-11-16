@@ -35,6 +35,9 @@
     <ApplicationIcon>im_sphere_v2.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AppControl">
+      <HintPath>..\..\common dlls\AppControl.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -61,23 +64,31 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\Controls\CustomGameButton.xaml.cs">
-      <DependentUpon>CustomGameButton.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\Controls\GameButton.cs">
+    <Compile Include="Resources\Controls\GameButton\GameButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Resources\Controls\GameButton.Designer.cs">
+    <Compile Include="Resources\Controls\GameButton\GameButton.Designer.cs">
       <DependentUpon>GameButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Resources\Controls\GameModel.cs" />
-    <Compile Include="Resources\Controls\GameModelMaster.cs" />
-    <Compile Include="Resources\Controls\GlobalMouseHandler.cs" />
-    <Compile Include="Resources\RunApp.cs" />
-    <Compile Include="Resources\Splasher\Splasher.cs" />
-    <Compile Include="Resources\Splasher\SplashForm.cs">
+    <Compile Include="Resources\Controls\GameLoader\GameLoader.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Resources\Controls\GameLoader\GameLoader.Designer.cs">
+      <DependentUpon>GameLoader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\GameLoader\GamePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\Controls\SplashScreen\SplashScreenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Controls\SplashScreen\SplashScreenForm.Designer.cs">
+      <DependentUpon>SplashScreenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Models\GameModel.cs" />
+    <Compile Include="Resources\Models\GameModelMaster.cs" />
+    <Compile Include="Resources\RunApp.cs" />
+    <Compile Include="Resources\Controls\SplashScreen\SplashScreen.cs" />
     <EmbeddedResource Include="Play9MainForm.resx">
       <DependentUpon>Play9MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,11 +100,17 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Resources\Controls\GameButton.resx">
+    <EmbeddedResource Include="Resources\Controls\GameButton\GameButton.resx">
       <DependentUpon>GameButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Splasher\SplashForm.resx" />
+    <EmbeddedResource Include="Resources\Controls\GameLoader\GameLoader.resx">
+      <DependentUpon>GameLoader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controls\SplashScreen\SplashScreenForm.resx">
+      <DependentUpon>SplashScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -109,7 +126,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="im_sphere_v2.ico" />
-    <Content Include="Resources\Controls\GameData.xml" />
+    <Content Include="Resources\Images\Loading.gif" />
+    <Content Include="Resources\Models\GameData.xml" />
     <Content Include="Resources\Images\GameIcons\01 OuttaSpace.png" />
     <Content Include="Resources\Images\GameIcons\02 Treehouse.png" />
     <Content Include="Resources\Images\GameIcons\03 AquaLand.png" />
@@ -130,12 +148,6 @@
     <Content Include="Resources\Images\PLAY9.png" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Page Include="Resources\Controls\CustomGameButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Play9GamePackBasic.Resources.Controls;
 using System.Xml;
+using System.Threading;
 
 namespace Play9GamePackBasic
 {
@@ -53,7 +54,7 @@ namespace Play9GamePackBasic
         private void loadGameButtonsData()
         {
             XmlDocument xDoc = new XmlDocument();
-            xDoc.Load(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\Resources\\Controls\\GameData.xml");
+            xDoc.Load(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\Resources\\Models\\GameData.xml");
 
             XmlNodeList oXmlNodeList = xDoc.SelectNodes("AppData/HeaderText");
             foreach (XmlNode x in oXmlNodeList)
@@ -99,15 +100,29 @@ namespace Play9GamePackBasic
                     gb.ButtonImage = item.ImageSource;
                     gb.Margin = new Padding(45, 30, 0, 0);
 
+                    gb.Click += gb_Click;
                     buttonPanel.Controls.Add(gb);
                 }
             }
         }
 
+        private void gb_Click(object sender, EventArgs e)
+        {
+            showSplashScreen();
+
+        }
+
+        private void showSplashScreen()
+        {
+            Thread splashthread = new Thread(new ThreadStart(SplashScreen.ShowSplashScreen));
+            splashthread.IsBackground = true;
+            splashthread.Start();
+        }
+
         private void pbButton_Click(object sender, EventArgs e)
         {
             RunApp r = new RunApp();
-            contentPath = @"D:\workspace\of_v0.8.4_vs_release\apps\PegasusHighwaysHotelKidsZone\bin\PegasusHighwaysHotelLauncher\PegasusHighwaysHotelLauncher.exe";
+            contentPath = @"D:\workspace\of_v0.8.4_vs_release\apps\PegasusHighwaysHotelKidsZone\bin\PegasusHighwaysHotelLauncher\TheCubbyHouseLauncher.exe";
             ProcessStartInfo contentInfo = new ProcessStartInfo();
 
             contentInfo.FileName = contentPath;
@@ -137,27 +152,12 @@ namespace Play9GamePackBasic
 
         private void Game_Loaded()
         {
-
+            SplashScreen.CloseSplashScreen();
         }
 
         private void Content_Exited(object sender, EventArgs e)
         {
 
-        }
-
-        private void Pay9MainForm_Leave(object sender, EventArgs e)
-        {
-            this.KeyPreview = true;
-        }
-
-        private void Pay9MainForm_Enter(object sender, EventArgs e)
-        {
-            this.KeyPreview = false;
-        }
-
-        public void Pay9MainForm_Click(object sender, EventArgs e)
-        {
-            this.Capture = true;
         }
     }
 }

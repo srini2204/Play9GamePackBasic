@@ -86,11 +86,7 @@
             this.Name = "Pay9MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game Pack";
-            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Click += new System.EventHandler(this.Pay9MainForm_Click);
-            this.Enter += new System.EventHandler(this.Pay9MainForm_Enter);
-            this.Leave += new System.EventHandler(this.Pay9MainForm_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

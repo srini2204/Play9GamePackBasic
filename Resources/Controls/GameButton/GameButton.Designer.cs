@@ -83,6 +83,7 @@
             this.pbButton.TabIndex = 8;
             this.pbButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.pbButton.UseVisualStyleBackColor = false;
+            this.pbButton.Click += new System.EventHandler(this.pbButton_Click);
             // 
             // GameButton
             // 
@@ -96,6 +97,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "GameButton";
             this.Size = new System.Drawing.Size(409, 310);
+            this.Click += new System.EventHandler(this.GameButton_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pbBorder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
